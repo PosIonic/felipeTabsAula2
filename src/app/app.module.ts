@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { NoticiasPageModule } from '../pages/noticias/noticias.module';
 import { NewsPageModule } from '../pages/news/news.module';
+import { HttpModule } from '../../node_modules/@angular/Http';
+import { FilmesProvider } from '../providers/filmes/filmes';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { NewsPageModule } from '../pages/news/news.module';
     BrowserModule,
     IonicModule.forRoot(MyApp), 
     NoticiasPageModule,
-    NewsPageModule
+    NewsPageModule,
+    HttpModule
     ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,6 +41,7 @@ import { NewsPageModule } from '../pages/news/news.module';
   providers: [
     StatusBar,
     SplashScreen,
+    FilmesProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
